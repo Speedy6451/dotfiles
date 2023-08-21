@@ -1,0 +1,12 @@
+.config/nvim/init.vim
+.config/nvim/coc-settings.json
+.config/alacritty.yml
+.config/sway/config
+.config/sway/lock.sh
+.config/sway/fancelock.sh
+.config/i3status-rust/config.toml
+.config/helix/config.toml
+.config/helix/languages.toml
+.zshrc
+.zshenv
+.vitetris
