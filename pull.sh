@@ -2,7 +2,8 @@
 
 for synced in `cat synced`; do
     echo -n $synced...
-    mkdir -p `dirname -- $synced`
-    cp $HOME/$synced .
+    dir=`dirname -- $synced`
+    mkdir -p $dir
+    cp $HOME/$synced $dir
     echo done
 done
