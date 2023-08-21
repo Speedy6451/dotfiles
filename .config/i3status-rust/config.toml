@@ -1,0 +1,69 @@
+theme = "bad-wolf"
+
+[icons]
+name = "awesome"
+[icons.overrides]
+seperator = ""
+#time = ""
+#update = ""
+#uptime = ""
+
+[[block]]
+block = "focused_window"
+max_width=80
+show_marks="visible"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "used"
+unit = "GB"
+interval = 20
+warning = 900.0
+alert = 940.0
+format="ssd {available} ({percentage})"
+
+[[block]]
+block = "disk_space"
+path = "/hdd"
+alias = "/hdd"
+info_type = "used"
+unit = "GB"
+interval = 20
+warning = 2800.0
+alert = 2950.0
+format="hdd {available} ({percentage})"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+warning_mem = 75.0
+critical_swap = 80.0
+
+[[block]]
+block = "cpu"
+interval = 1
+warning = 50
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "pacman"
+interval = 600
+format = "{pacman} updates"
+hide_when_uptodate = true
+on_click = "fakeroot pacman -Qu --dbpath /tmp/checkup-db-andy/ | dmenu -l 25 -f -p 'to be installed'"
+
+[[block]]
+block = "uptime"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %b %d : %Y-%m-%d : %l:%M:%S %p"
+
+

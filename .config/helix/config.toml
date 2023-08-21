@@ -1,0 +1,31 @@
+theme = "ferra"
+
+[editor]
+scrolloff = 3
+idle-timeout = 150
+
+[editor.statusline]
+center = ["version-control"]
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+
+[editor.soft-wrap]
+enable=true
+
+[keys.normal]
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+
+"D" = ["extend_to_line_bounds", "delete_selection"]
+"0" = ["goto_line_start"]
+"$" = ["goto_line_end"]
+
+[keys.insert]
+C-p = "move_line_up"
+C-n = "move_line_down"
+C-e = "goto_line_end_newline"
+C-a = "goto_line_start"
+C-f = "move_char_right"
+C-b = "move_char_left"
