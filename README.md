@@ -6,7 +6,10 @@ Note that `push.sh` overwrites your system's config files, if you aren't a full 
 
 ### Layout
 
-`synced` - list of tracked files
-`pull.sh` - updates repository from computer
-`push.sh` - updates computer from repository
-`./**` - tracked files
+- `synced` - list of tracked files
+- `pull.sh` - updates repository from computer
+- `push.sh` - updates computer from repository
+- `nvimsubtree.sh` - updates my Init.vim repository
+    - `./nvimsubtree.sh pull --squash` - update from github
+    - `./nvimsubtree.sh push` - push to github
+- `./**` - tracked files
