@@ -1,3 +1,5 @@
+# note: pinned on 0.22.0-1 (extra/i3status-rust)
+
 theme = "bad-wolf"
 
 [icons]
