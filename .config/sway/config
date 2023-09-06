@@ -79,7 +79,8 @@ output DP-2 {
 # start vnc with `wayvnc --output=HEADLESS-1 --max-fps=20 0.0.0.0 5900`
 # note: wayvnc is compiled against libplacebo 4.208, freeze that until a wayvnc update (ffmpeg conflict)
 output HEADLESS-3 {
-    pos 1920,180
+    #pos 1920,180
+    pos 3000, 1920
     # mac resolution
     mode 1440x900 
     #transform 90
@@ -109,8 +110,9 @@ output HEADLESS-2 {
 output HEADLESS-1 {
     pos 400,2160
     # mac resolution
-    #mode 2160x1440
-    mode 1080x720
+    mode 2160x1440
+    scale 2
+    #mode 1080x720
     # 4k is detrimental over vnc + super-retina
 }
 #exec swaymsg create_output HEADLESS-3
