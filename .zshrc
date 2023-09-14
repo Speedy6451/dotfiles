@@ -43,3 +43,7 @@ alias ls="ls -F -b -T 0 -A --color=auto"
 
 # how it took me 6 months to figure this out idk
 export GTK_THEME=Adwaita:dark
+
+export MOZ_ENABLE_WAYLAND=1
+
+alias of="onefetch --no-color-palette --no-art --no-title --disabled-fields=churn"

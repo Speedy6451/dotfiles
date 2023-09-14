@@ -80,7 +80,7 @@ output DP-2 {
 # note: wayvnc is compiled against libplacebo 4.208, freeze that until a wayvnc update (ffmpeg conflict)
 output HEADLESS-3 {
     #pos 1920,180
-    pos 3000, 1920
+    pos 3000,1920
     # mac resolution
     mode 1440x900 
     #transform 90
