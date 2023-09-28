@@ -7,7 +7,7 @@
             "command": "rnix-lsp",
             "filetypes": ["nix"]
         },
-        "nix": {
+        "makepkg": {
             "command": "pkgbuild-language-server",
             "filetypes": ["PKGBUILD"]
         },
