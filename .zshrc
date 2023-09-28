@@ -23,6 +23,8 @@ export PATH=$PATH:$HOME/Documents/applications/bin
 
 export PATH=$PATH:$HOME/.local/bin
 
+export PATH=$PATH:$HOME/.nix-profile/bin
+
 # from mac
 PS1='%(?.%F{green}%?%f.%F{red}%?%f) %2~ %# '
 RPROMPT='%D{%l%M.%S}'
@@ -47,3 +49,4 @@ export GTK_THEME=Adwaita:dark
 export MOZ_ENABLE_WAYLAND=1
 
 alias of="onefetch --no-color-palette --no-art --no-title --disabled-fields=churn"
+alias sws="static-web-server -p 8080 -d ."
