@@ -3,6 +3,8 @@ theme = "ferra"
 [editor]
 scrolloff = 3
 idle-timeout = 150
+terminal.command = "zsh"
+terminal.args = ["-c"]
 
 [editor.statusline]
 center = ["version-control"]
