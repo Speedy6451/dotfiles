@@ -60,13 +60,7 @@ function git-subdir() {
 }
 
 function jobrog_git_tag() {
-    local top=$(git-subdir | tr '/' '\n' | head -2 | tail -1)
-
-    if [ -n "$top" ]; then
-        top="-t $top"
-    fi
-
-    echo "$top"
+    git-subdir | tr '/' '\n' | tail -n +2 | head -n $1 | xargs -I {} echo -n "-t {} "
 }
 
 # jobrog porcelain
@@ -76,16 +70,16 @@ function grog() {
     job -d $root $@
 }
 function start() {
-    grog a $(jobrog_git_tag) $@
+    grog a $(jobrog_git_tag 2) $@
 }
 function stop() {
     grog d $@
 }
 function todo() {
-    grog n $(jobrog_git_tag) -t todo $@
+    grog n $(jobrog_git_tag 2) -t todo $@
 }
 function todos() {
-    grog s -n -t $(jobrog_git_tag) -t todo -T done $@
+    grog s -n -t $(jobrog_git_tag 2) -t todo -T done $@
 }
 function did() {
         local rx=$1; shift
