@@ -50,3 +50,44 @@ export MOZ_ENABLE_WAYLAND=1
 
 alias of="onefetch --no-color-palette --no-art --no-title --disabled-fields=churn"
 alias sws="static-web-server -p 8080 -d ."
+
+
+# this does not if accessing a git repo thru a symlink
+function git-subdir() {
+    local root=$(git rev-parse --show-toplevel)
+    # get top level folder within git
+    echo "${PWD#"$root"}"
+}
+
+function jobrog_git_tag() {
+    local top=$(git-subdir | tr '/' '\n' | head -2 | tail -1)
+
+    if [ -n "$top" ]; then
+        top="-t $top"
+    fi
+
+    echo "$top"
+}
+
+# jobrog porcelain
+# mainly adds git integration
+function grog() {
+    local root=$(git rev-parse --show-toplevel)
+    job -d $root $@
+}
+function start() {
+    grog a $(jobrog_git_tag) $@
+}
+function stop() {
+    grog d $@
+}
+function todo() {
+    grog n $(jobrog_git_tag) -t todo $@
+}
+function todos() {
+    grog s -n -t $(jobrog_git_tag) -t todo -T done $@
+}
+function did() {
+        local rx=$1; shift
+        grog tag -fnt todo -T done --rx $rx -a done $*
+}
