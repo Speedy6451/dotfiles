@@ -159,7 +159,7 @@ bindsym $mod+n exec makoctl dismiss
 
 # music play/pause
 #bindsym --locked XF86AudioPlay exec pragha -t
-bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioPlay exec "playerctl --player=spotify,pragha,%any play-pause"
 
 # volume
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +3%
@@ -176,8 +176,9 @@ bindsym XF86Favorites scratchpad show
 
 bindsym Print move container to workspace f 
 
-bindsym $mod++Shift+r exec /home/andy/Documents/applications/wf-recorder/build/wf-recorder -g "$(slurp)" -f /home/andy/Documents/recording.webm
-bindsym $mod++Shift+t exec killall -SIGINT /home/andy/Documents/applications/wf-recorder/build/wf-recorder
+bindsym $mod+Shift+r exec wf-recorder -g "$(slurp)" -f /home/andy/Documents/media/screenshots/"$(date +%Y-%m-%d-%H:%M:%S)".webm
+bindsym $mod+Shift+t exec killall -SIGINT wf-recorder
+bindsym $mod+Shift+f exec grim -g "$(slurp)" /home/andy/Documents/media/screenshots/"$(date +%Y-%m-%d-%H:%M:%S)".png
 
 bindsym $mod+Control+Shift+$right move workspace to output right
 bindsym $mod+Control+Shift+$left move workspace to output left
